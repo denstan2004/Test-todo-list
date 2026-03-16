@@ -1,0 +1,67 @@
+.group {
+  display: flex;
+  gap: 0;
+}
+
+.button {
+  height: 36px;
+  padding: var(--space-xs) var(--space-lg);
+  font-family: var(--font-family);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  color: var(--color-text);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  cursor: pointer;
+  transition:
+    background var(--transition-fast),
+    color var(--transition-fast),
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+/* Collapse double borders between adjacent buttons */
+.button + .button {
+  margin-left: -1px;
+}
+
+/* Rounded corners only on the edges */
+.button:first-child {
+  border-radius: var(--radius-md) 0 0 var(--radius-md);
+}
+
+.button:last-child {
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+}
+
+/* Hover state for inactive buttons */
+.button:not(.active):hover {
+  background: var(--color-surface-hover);
+}
+
+/* Active press state for inactive buttons */
+.button:not(.active):active {
+  transform: scale(0.97);
+}
+
+/* Active (selected) state */
+.button.active {
+  color: #ffffff;
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  position: relative;
+  z-index: 1;
+}
+
+.button.active:hover {
+  background: var(--color-primary-hover);
+  border-color: var(--color-primary-hover);
+}
+
+/* Focus visible */
+.button:focus-visible {
+  outline: 2px solid var(--color-border-focus);
+  outline-offset: -2px;
+  z-index: 2;
+}

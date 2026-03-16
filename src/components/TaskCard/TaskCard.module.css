@@ -1,0 +1,209 @@
+.card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-xs) var(--space-sm);
+  margin-bottom: var(--space-sm);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  transition:
+    box-shadow var(--transition-fast),
+    opacity var(--transition-fast),
+    background var(--transition-fast),
+    border-color var(--transition-fast);
+  min-height: 36px;
+}
+
+.card:last-child {
+  margin-bottom: 0;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.dragging {
+  opacity: 0.5;
+  box-shadow: var(--shadow-drag);
+}
+
+.dragHandle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  cursor: grab;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  flex-shrink: 0;
+  border: none;
+  background: none;
+  padding: 0;
+  border-radius: var(--radius-sm);
+  transition:
+    color var(--transition-fast),
+    background var(--transition-fast);
+}
+
+.dragHandle:hover {
+  color: var(--color-text);
+  background: var(--color-surface-hover);
+}
+
+.dragHandle:focus-visible {
+  outline: 2px solid var(--color-border-focus);
+  outline-offset: -2px;
+}
+
+.dragHandle:active {
+  cursor: grabbing;
+}
+
+.checkbox {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  flex-shrink: 0;
+  accent-color: var(--color-primary);
+  transition: transform var(--transition-fast);
+}
+
+.checkbox:focus-visible {
+  outline: 2px solid var(--color-border-focus);
+  outline-offset: 2px;
+}
+
+.checkbox:active {
+  transform: scale(0.9);
+}
+
+.bulkCheckbox {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  flex-shrink: 0;
+  accent-color: var(--color-success);
+  transition: transform var(--transition-fast);
+}
+
+.bulkCheckbox:focus-visible {
+  outline: 2px solid var(--color-border-focus);
+  outline-offset: 2px;
+}
+
+.bulkCheckbox:active {
+  transform: scale(0.9);
+}
+
+.taskName {
+  flex: 1;
+  font-size: var(--font-size-sm);
+  color: var(--color-text);
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transition:
+    color var(--transition-normal),
+    text-decoration-color var(--transition-normal);
+}
+
+.taskNameCompleted {
+  text-decoration: line-through;
+  color: var(--color-text-completed);
+}
+
+.highlight {
+  background-color: #fff3cd;
+  border-radius: 2px;
+  padding: 0 1px;
+  transition: background-color var(--transition-fast);
+}
+
+.editInput {
+  flex: 1;
+  font-size: var(--font-size-sm);
+  font-family: var(--font-family);
+  padding: 2px var(--space-sm);
+  border: 1px solid var(--color-border-focus);
+  border-radius: var(--radius-sm);
+  outline: none;
+  min-width: 0;
+  height: 28px;
+  box-sizing: border-box;
+  transition:
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.editInput:focus {
+  box-shadow: 0 0 0 2px rgba(74, 144, 217, 0.3);
+}
+
+.editInput:hover {
+  border-color: var(--color-primary-hover);
+}
+
+.actionBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: var(--font-size-sm);
+  border-radius: var(--radius-sm);
+  flex-shrink: 0;
+  transition:
+    background var(--transition-fast),
+    color var(--transition-fast),
+    transform var(--transition-fast);
+  color: var(--color-text-muted);
+  padding: 0;
+}
+
+.actionBtn:hover {
+  background: var(--color-surface-hover);
+  color: var(--color-text);
+}
+
+.actionBtn:focus-visible {
+  outline: 2px solid var(--color-border-focus);
+  outline-offset: -2px;
+}
+
+.actionBtn:active {
+  transform: scale(0.92);
+}
+
+.deleteBtn:hover {
+  color: var(--color-danger);
+}
+
+/* Drop indicators for drag-and-drop positioning */
+.dropIndicatorTop {
+  position: absolute;
+  top: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--color-drop-indicator);
+  border-radius: 1px;
+  pointer-events: none;
+}
+
+.dropIndicatorBottom {
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--color-drop-indicator);
+  border-radius: 1px;
+  pointer-events: none;
+}

@@ -1,0 +1,64 @@
+.board {
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-xl);
+  padding: var(--space-xl);
+  overflow-x: auto;
+  min-height: 0;
+  flex: 1;
+  align-items: flex-start;
+}
+
+@media (max-width: 767px) {
+  .board {
+    flex-direction: column;
+    overflow-x: hidden;
+    overflow-y: auto;
+    align-items: stretch;
+  }
+}
+
+.addColumnBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--column-width);
+  width: var(--column-width);
+  min-height: 120px;
+  border: 2px dashed var(--color-border);
+  border-radius: var(--radius-lg);
+  background: transparent;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-base);
+  font-family: var(--font-family);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition:
+    border-color var(--transition-fast),
+    color var(--transition-fast),
+    background var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.addColumnBtn:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  background: var(--color-drag-overlay);
+}
+
+.addColumnBtn:focus-visible {
+  outline: 2px solid var(--color-border-focus);
+  outline-offset: 2px;
+}
+
+.addColumnBtn:active {
+  transform: scale(0.98);
+}
+
+@media (max-width: 767px) {
+  .addColumnBtn {
+    width: 100%;
+    min-width: unset;
+    min-height: 80px;
+  }
+}
